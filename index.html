@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<script src="functions.js" defer></script>
+<body>
+     <!-- <button onclick="changeBackgroundColor()">Change Color</button> 
+
+
+    <button onclick="generatePassword()">Click me</button>
+    <p id="generatedPassword">"generatedPassword"</p> -->
+
+    <h2 class="title" id="title"> Strong Password Generator</h2>
+    <br>
+<div class="check">    
+    <div class="length">
+    <label for="passwordLength">Password Length:</label>
+    </div>
+    <div class="inlength">
+    <input type="text" maxlength="4" size="4" id="passwordLength" value="12" min="1" max="20">
+    </div>
+</div>
+    <br>
+<div class="check">
+    <div class="uppercaseCheckbox" onclick="toggleCheckbox(this)">
+        <input type="checkbox" id="uppercaseCheckbox" />
+        Upper Case
+    </div>
+    <div class="lowercaseCheckbox" onclick="toggleCheckbox(this)">
+        <input type="checkbox" id="lowercaseCheckbox" />
+        Lower Case
+    </div>
+    <div class="numericCheckbox" onclick="toggleCheckbox(this)">
+        <input type="checkbox" id="numericCheckbox" />
+        Numbers
+    </div>
+    <div class="specialCheckbox" onclick="toggleCheckbox(this)">
+        <input type="checkbox" id="specialCheckbox" />
+        Special
+    </div>
+</div>    
+    <br>
+<div id="checkb">
+    <label class="checkbox-button"><input type="checkbox" id="uppercaseCheckbox">Include Uppercase Letters</label>
+    <label class="checkbox-button"><input type="checkbox" id="lowercaseCheckbox">Include Lowercase Letters</label>
+    <label class="checkbox-button"><input type="checkbox" id="numericCheckbox">Include Numbers</label>
+    <label class="checkbox-button"><input type="checkbox" id="specialCheckbox">Include Special Characters</label>
+</div>
+    <br>
+<div id="buttondiv">
+    <button onclick="generatePassword()">Generate Password</button>
+</div>
+<div id="result">
+    <div class="h2">
+    <h2>Generated Password: </h2>
+    </div>
+    <br>
+    <div class="outputp">
+    <span id="passwordOutput"></span>
+    </div>
+</div>
+
+
+</body>
+</html>
