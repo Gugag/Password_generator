@@ -110,7 +110,7 @@ input[type="checkbox"]:checked::before
     display: flex;
     cursor: pointer;
     justify-content: center;
-    padding: 10px 18px;
+    padding: 10px 20px;
     font-size: 16px;
     white-space: nowrap; /* Adjust according to your design */
     border: 2px solid #4CAF50;
