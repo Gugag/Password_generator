@@ -119,7 +119,6 @@ input[type="checkbox"]:checked::before
     transition: background-color 0.3s, color 0.3s;
     flex-wrap: wrap; /* Add this line for flex items to wrap onto multiple lines */
 
-    /* Add any additional styles or modifications you need */
 
     /* Responsive styles */
     @media screen and (max-width: 600px) {
