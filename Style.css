@@ -114,7 +114,7 @@ input[type="checkbox"]:checked::before
     color: #4CAF50;
     user-select: none;
     transition: background-color 0.3s, color 0.3s;
-    margin: 5px,5px,5px,5px;
+    
     
     
 }
