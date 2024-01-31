@@ -167,7 +167,7 @@ input[type="checkbox"]:checked::before
     color: #4e067f;
     border-radius: 5px 5px 5px 5px;
     font-size: 20px;
-    box-shadow: 0 1px 3px #4CAF50;
+    box-shadow: 0 1px 3px #4e067f;
     
 }
 
