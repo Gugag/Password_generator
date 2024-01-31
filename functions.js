@@ -47,6 +47,13 @@ function toggleCheckbox(element) {
 
 function copyToClipboard() {
     var passwordOutput = document.getElementById('passwordOutput');
+    
+    // Check if the password is not generated yet (empty)
+    if (!passwordOutput.textContent.trim()) {
+        alert('Password is not generated yet!');
+        return;
+    }
+
     var range = document.createRange();
     range.selectNode(passwordOutput);
     window.getSelection().removeAllRanges();
@@ -54,19 +61,20 @@ function copyToClipboard() {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
-     // Display a custom alert message
-     var alertMessage = document.createElement('div');
-     alertMessage.textContent = 'Done!!! Password copied to clipboard!';
-     alertMessage.className = 'alert';
- 
-     // Append the alert message to the body
-     document.body.appendChild(alertMessage);
- 
-     // Hide the alert after a timeout of 2000 milliseconds (2 seconds)
-     setTimeout(function () {
-         alertMessage.style.display = 'none';
-     }, 2000);
+    // Display a custom alert message
+    var alertMessage = document.createElement('div');
+    alertMessage.textContent = 'Done!!! Password copied to clipboard!';
+    alertMessage.className = 'alert';
+
+    // Append the alert message to the body
+    document.body.appendChild(alertMessage);
+
+    // Hide the alert after a timeout of 2000 milliseconds (2 seconds)
+    setTimeout(function () {
+        alertMessage.style.display = 'none';
+    }, 2000);
 }
+
 
 // Simulate default active state for checkboxes
 document.addEventListener('DOMContentLoaded', function() {
