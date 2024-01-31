@@ -54,11 +54,16 @@ function copyToClipboard() {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
-   // Display the alert after a timeout of 2000 milliseconds (2 seconds)
-   alert('Done!!! Password copied to clipboard!');
-
-   // Hide the alert after a timeout of 2000 milliseconds (2 seconds)
-   setTimeout(function () {
-       document.querySelector('.alert').style.display = 'none';
-   }, 2000);
+     // Display a custom alert message
+     var alertMessage = document.createElement('div');
+     alertMessage.textContent = 'Done!!! Password copied to clipboard!';
+     alertMessage.className = 'alert';
+ 
+     // Append the alert message to the body
+     document.body.appendChild(alertMessage);
+ 
+     // Hide the alert after a timeout of 2000 milliseconds (2 seconds)
+     setTimeout(function () {
+         alertMessage.style.display = 'none';
+     }, 2000);
 }
