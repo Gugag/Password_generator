@@ -1,20 +1,3 @@
-function changeBackgroundColor() {
-    // Generate random RGB values
-    var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-    
-    // Set the background color
-    document.body.style.backgroundColor = randomColor;
-}
-
-function updateOutput() {
-    // Get the paragraph element by its ID
-    var outputParagraph = document.getElementById('output');
-    var paswd = 
-
-    // Update the content of the paragraph
-    outputParagraph.innerHTML = 'Button clicked! This is the output.';
-}
-
 function generatePassword() {
     // Define the character sets
     var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -60,4 +43,15 @@ function toggleCheckbox(element) {
     } else {
         element.classList.remove('active');
     }
+}
+
+function copyToClipboard() {
+    var passwordOutput = document.getElementById('passwordOutput');
+    var range = document.createRange();
+    range.selectNode(passwordOutput);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert('Password copied to clipboard!');
 }
