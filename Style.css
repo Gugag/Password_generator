@@ -104,15 +104,26 @@ input[type="checkbox"]:checked::before
     justify-content: center;
     padding: 6px 12px;
     font-size: 14px;
+    white-space: nowrap; /* Adjust according to your design */
     border: 2px solid #4CAF50;
     border-radius: 5px;
     background-color: #fff;
     color: #4CAF50;
     user-select: none;
     transition: background-color 0.3s, color 0.3s;
-    
-    
+    flex-wrap: wrap; /* Add this line for flex items to wrap onto multiple lines */
+
+    /* Add any additional styles or modifications you need */
+
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Add more media queries as needed */
 }
+
 
 .uppercaseCheckbox.active,
 .lowercaseCheckbox.active,
