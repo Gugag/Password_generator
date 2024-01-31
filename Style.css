@@ -189,7 +189,7 @@ input[type="checkbox"]:checked::before
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4e067f;
+    background-color: #c20606;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
