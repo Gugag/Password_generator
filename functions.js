@@ -53,5 +53,9 @@ function copyToClipboard() {
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    alert('Password copied to clipboard!');
+
+    // Display the alert after a timeout of 2000 milliseconds (2 seconds)
+    setTimeout(function () {
+        alert(' Done!!! Password copied to clipboard!');
+    }, 2000);
 }
