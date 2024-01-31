@@ -53,7 +53,7 @@ function copyToClipboard() {
         // Display a custom alert message for not generated password
         var notGeneratedAlert = document.createElement('div');
         notGeneratedAlert.textContent = 'Password is not generated yet!';
-        notGeneratedAlert.className = 'alert-not-generated';
+        notGeneratedAlert.className = 'alert';
 
         // Append the alert message to the body
         document.body.appendChild(notGeneratedAlert);
