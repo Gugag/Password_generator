@@ -183,3 +183,16 @@ input[type="checkbox"]:checked::before
     display: block;
     transition: display 0.3s;
 }
+
+.alert-not-generated {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4e067f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    transition: display 0.3s;
+}
