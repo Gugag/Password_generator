@@ -132,13 +132,7 @@ input[type="checkbox"]:checked::before
     color: #fff;
 }
 
-.uppercaseCheckbox.active,
-.lowercaseCheckbox.active,
-.numericCheckbox.active,
-.specialCheckbox.active {
-    background-color: #4CAF50;
-    color: #fff;
-}
+
 
 .uppercaseCheckbox input[type="checkbox"] {
     display: none;

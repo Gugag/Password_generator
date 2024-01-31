@@ -67,3 +67,13 @@ function copyToClipboard() {
          alertMessage.style.display = 'none';
      }, 2000);
 }
+
+// Simulate default active state for checkboxes
+document.addEventListener('DOMContentLoaded', function() {
+    var checkboxes = document.querySelectorAll('.uppercaseCheckbox input, .lowercaseCheckbox input, .numericCheckbox input, .specialCheckbox input');
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = true; // Check the checkbox
+        checkbox.parentElement.classList.add('active'); // Add the "active" class
+    });
+});
