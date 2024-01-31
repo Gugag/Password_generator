@@ -145,6 +145,13 @@ input[type="checkbox"]:checked::before
     display: none;
 }
 
+.uppercaseCheckbox.hover,
+.lowercaseCheckbox.hover,
+.numericCheckbox.hover,
+.specialCheckbox.hover {
+    background-color: #45a049;
+}
+
 .check {
     display: flex;
     Flex-Direction: row;
