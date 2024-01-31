@@ -154,7 +154,7 @@ input[type="checkbox"]:checked::before
   }
 
 .h3{
-    color: #4e067f;
+    color: orangered;
 }
 
 .outputp{
