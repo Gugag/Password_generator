@@ -136,7 +136,7 @@ input[type="checkbox"]:checked::before
 .lowercaseCheckbox.active,
 .numericCheckbox.active,
 .specialCheckbox.active {
-    background-color: #4e067f;
+    background-color: #4CAF50;
     color: #fff;
 }
 
