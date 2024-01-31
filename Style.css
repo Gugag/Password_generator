@@ -117,8 +117,8 @@ input[type="checkbox"]:checked::before
 
     /* Responsive styles */
     @media screen and (max-width: 600px) {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 12px;
+        padding: 6px 12px;
     }
 
     /* Add more media queries as needed */
