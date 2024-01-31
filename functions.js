@@ -47,10 +47,21 @@ function toggleCheckbox(element) {
 
 function copyToClipboard() {
     var passwordOutput = document.getElementById('passwordOutput');
-    
+
     // Check if the password is not generated yet (empty)
     if (!passwordOutput.textContent.trim()) {
-        alert('Password is not generated yet!');
+        // Display a custom alert message for not generated password
+        var notGeneratedAlert = document.createElement('div');
+        notGeneratedAlert.textContent = 'Password is not generated yet!';
+        notGeneratedAlert.className = 'alert-not-generated';
+
+        // Append the alert message to the body
+        document.body.appendChild(notGeneratedAlert);
+
+        // Hide the alert after a timeout of 2000 milliseconds (2 seconds)
+        setTimeout(function () {
+            notGeneratedAlert.style.display = 'none';
+        }, 2000);
         return;
     }
 
@@ -61,7 +72,7 @@ function copyToClipboard() {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
-    // Display a custom alert message
+    // Display a custom alert message for copied password
     var alertMessage = document.createElement('div');
     alertMessage.textContent = 'Done!!! Password copied to clipboard!';
     alertMessage.className = 'alert';
@@ -75,14 +86,14 @@ function copyToClipboard() {
     }, 2000);
 }
 
-
 // Simulate default active state for checkboxes
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.uppercaseCheckbox input, .lowercaseCheckbox input, .numericCheckbox input, .specialCheckbox input');
 
-    checkboxes.forEach(function(checkbox) {
+    checkboxes.forEach(function (checkbox) {
         checkbox.checked = true; // Check the checkbox
         checkbox.parentElement.classList.add('active'); // Add the "active" class
     });
 });
+
 
