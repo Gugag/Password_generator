@@ -3,7 +3,7 @@ body{
     margin: 0;
     overflow: hidden;
     background: url('https://www.bhmpics.com/downloads/animated-svg-wallpaper/11.bubble-animated-background.svg') repeat;
-    background-size: auto; /* Adjust as needed */
+    background-size: cover; /* Adjust as needed */
 }
 
 .title{
