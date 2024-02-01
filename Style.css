@@ -2,8 +2,8 @@ body{
     background-color: #cacace;
     margin: 0;
     overflow: hidden;
-    background: url('https://www.bhmpics.com/downloads/animated-svg-wallpaper/7.1069a7113c399a9a9ca3185769c59134.gif') repeat;
-    background-size: cover; /* Adjust as needed */
+    background: url('https://www.bhmpics.com/downloads/animated-svg-wallpaper/3.motion-background.svg') repeat;
+    background-size: auto; /* Adjust as needed */
 }
 
 .title{
