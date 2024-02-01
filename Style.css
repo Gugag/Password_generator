@@ -219,3 +219,13 @@ input[type="checkbox"]:checked::before
     display: block;
     transition: display 0.3s;
 }
+
+ footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
