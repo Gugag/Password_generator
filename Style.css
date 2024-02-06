@@ -227,5 +227,6 @@ input[type="checkbox"]:checked::before
             padding: 10px;
             position: relative;
             bottom: 0;
+            display: none;
      
 }
