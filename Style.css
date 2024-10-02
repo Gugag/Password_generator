@@ -2,16 +2,16 @@ body{
     background-color: #cacace;
     margin: 0;
     overflow: hidden;
-    background: url('https://www.bhmpics.com/downloads/animated-svg-wallpaper/11.bubble-animated-background.svg') repeat;
+    background: #fff;
     background-size: cover; /* Adjust as needed */
 }
 
 .title{
-    margin-top: 10px;
+    margin-top: 7%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: orangered;
+    color: #4e067f;
 }
 
 #checkb{
@@ -28,7 +28,7 @@ body{
     display: inline-block; /* Added to make sure the width works properly */
     width: 40px;
     height: 20px;
-    border: 3px solid #4CAF50;
+    border: 3px solid #4e067f;
     border-radius: 5px;
 }
 
@@ -39,7 +39,7 @@ body{
     margin: 0; /* Remove default input margin */
     outline: none;
     text-align: center;
-    color: #45a049;
+    color: #4e067f;
     background-color: transparent;
 }
 
@@ -57,14 +57,14 @@ button {
     padding: 8px 16px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #4e067f;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 0.1px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color:#0056b3;
 }
 
 #result {
@@ -79,7 +79,7 @@ input[type="checkbox"] {
     cursor: pointer;
     padding: 10px 20px;
     font-size: 16px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #0056b3;
     border-radius: 5px;
     background-color: #fff;
     color: #fff;
@@ -88,27 +88,21 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: #4CAF50;
-    border: 2px solid #4CAF50;
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
     display: none;
 }
 
 input[type="checkbox"]:checked::before 
     input[type="checkbox"]:checked + label {
-        background-color: #4CAF50;
+        background-color: #0056b3;
         color: #fff;
         display: none;
 }
 
 .length{
-    color: white;
-    background-color: #4e067f;
-    width: 140px;
-    height: 25px;
-    text-align: center;
-    padding-top: 5px;
-    border-radius: 5px;
-    font-size: 14px;
+    color: #4e067f;
+    font-weight: bold;
 }
 
 .uppercaseCheckbox,
@@ -165,7 +159,7 @@ input[type="checkbox"]:checked::before
 .lowercaseCheckbox.hover,
 .numericCheckbox.hover,
 .specialCheckbox.hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
 .check {
@@ -177,7 +171,7 @@ input[type="checkbox"]:checked::before
   }
 
 .h3{
-    color: #cccac0;
+    color: #4e067f;
 }
 
 .outputp{
@@ -187,10 +181,10 @@ input[type="checkbox"]:checked::before
     border: 2px solid;
     border-color: #4CAF50;
     text-align: center;
-    color: orangered;
     border-radius: 5px 5px 5px 5px;
     font-size: 20px;
     box-shadow: 0 1px 3px #4CAF50;
+    color: #4e067f;
     
 }
 
