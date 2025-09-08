@@ -1,73 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Strong Password Generator"> 
-    <meta property="og:description" content="Free Strong Password Generator, You can use Without Registration" > 
-    <meta property="og:image" content="https://i.ibb.co/zHN26wR/resized-image-4.png"> 
-    <meta property="og:url"content="https://itdata.ge">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Password Generator</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4e067f" />
+  <meta property="og:title" content="Strong Password Generator">
+  <meta property="og:description" content="Free Strong Password Generator. Works offline, no tracking.">
+  <meta property="og:image" content="https://i.ibb.co/zHN26wR/resized-image-4.png">
+  <meta property="og:url" content="https://itdata.ge">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="Style.css" />
 </head>
-
 <body>
-<link rel="stylesheet" href="Style.css">
-<script src="functions.js" defer></script>
-    <br>
-    <h2 class="title" id="title"> Strong Password Generator</h2>
-    <br>
-<div class="check">    
-    <div class="length">
-    <label for="passwordLength">Password Length:</label>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Strong Password Generator</h1>
+      <div class="header-actions">
+        <button id="themeToggle" class="ghost" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+      </div>
     </div>
-    <div class="inlength">
-    <input type="text" maxlength="2" size="4" id="passwordLength" value="12" min="1" max="20">
-    </div>
-</div>
-    <br><br>
-<div class="check">
-    <div class="uppercaseCheckbox" onclick="toggleCheckbox(this)">
-        <input type="checkbox" id="uppercaseCheckbox"/>
-        Upper Case
-    </div>
-    <div class="lowercaseCheckbox" onclick="toggleCheckbox(this)">
-        <input type="checkbox" id="lowercaseCheckbox"/>
-        Lower Case
-    </div>
-    <div class="numericCheckbox" onclick="toggleCheckbox(this)">
-        <input type="checkbox" id="numericCheckbox"/>
-        Numbers
-    </div>
-    <div class="specialCheckbox" onclick="toggleCheckbox(this)">
-        <input type="checkbox" id="specialCheckbox"/>
-        Special
-    </div>
-</div>    
-    <br><br>
-<div id="buttondiv">
-    <button onclick="generatePassword()">Generate Password</button>
-</div>
-<br>
-<div id="result">
-    <div class="h3">
-    <h3>Generated Password: </h3>
-    </div>
-    <div  contentEditable="true" class="outputp">
-    <span contentEditable="true" id="passwordOutput"></span>
-    </div>
-</div>
-<br>
-<div id="buttondiv">
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
-</div>
-<footer>
-                <!-- TOP.GE ASYNC COUNTER CODE -->
-            <div id="top-ge-counter-container" data-site-id="117182"></div>
-            <script async src="//counter.top.ge/counter.js"></script>
-            <!-- / END OF TOP.GE COUNTER CODE -->
-        
-</footer>
+  </header>
 
+  <main class="container">
+    <section class="card">
+      <form id="pwForm" class="grid two" autocomplete="off">
+        <div class="form-group">
+          <label for="passwordLength">Length</label>
+          <div class="hstack">
+            <input type="number" id="passwordLength" min="4" max="64" value="12" />
+            <input type="range" id="passwordLengthRange" min="4" max="64" value="12" />
+          </div>
+          <div class="muted small">Tip: 16–24 is great for most sites.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Character sets</label>
+          <div class="checks">
+            <button type="button" class="check-btn active" data-for="uppercaseCheckbox" role="checkbox" aria-checked="true" tabindex="0">
+              <input type="checkbox" id="uppercaseCheckbox" checked hidden> Uppercase
+            </button>
+            <button type="button" class="check-btn active" data-for="lowercaseCheckbox" role="checkbox" aria-checked="true" tabindex="0">
+              <input type="checkbox" id="lowercaseCheckbox" checked hidden> Lowercase
+            </button>
+            <button type="button" class="check-btn active" data-for="numericCheckbox" role="checkbox" aria-checked="true" tabindex="0">
+              <input type="checkbox" id="numericCheckbox" checked hidden> Numbers
+            </button>
+            <button type="button" class="check-btn active" data-for="specialCheckbox" role="checkbox" aria-checked="true" tabindex="0">
+              <input type="checkbox" id="specialCheckbox" checked hidden> Special
+            </button>
+            <label class="inline">
+              <input type="checkbox" id="avoidAmbiguous"> Avoid ambiguous (0/O, 1/l/I)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prefix">Optional: prefix/suffix</label>
+          <div class="hstack">
+            <input id="prefix" type="text" placeholder="prefix-" />
+            <input id="suffix" type="text" placeholder="-2025!" />
+          </div>
+          <div class="muted small">Useful for sites with rules (you can leave these empty).</div>
+        </div>
+
+        <div class="form-group">
+          <label>Controls</label>
+          <div class="btn-row">
+            <button type="button" id="generateBtn" class="primary">Generate</button>
+            <button type="button" id="copyBtn" class="ghost" disabled>Copy</button>
+            <button type="button" id="resetBtn" class="ghost">Reset</button>
+          </div>
+          <div class="muted small">Keyboard: Ctrl/⌘+Enter to generate.</div>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Result</h2>
+      <div class="result-box">
+        <input id="passwordOutput" class="output" type="text" readonly value="" aria-label="Generated password" />
+        <div class="meter">
+          <div id="strengthBar" class="bar"></div>
+        </div>
+        <div class="muted small"><span id="strengthLabel">–</span> • <span id="entropyLabel">0</span> bits entropy</div>
+      </div>
+    </section>
+
+    <section class="card tips">
+      <h2>Tips</h2>
+      <ul>
+        <li>Use a password manager. Store this once; never reuse passwords.</li>
+        <li>Enable 2‑factor authentication where possible.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container muted small">
+    <p>Runs entirely in your browser. No data leaves your device.</p>
+  </footer>
+
+  <script src="functions.js" defer></script>
 </body>
 </html>
